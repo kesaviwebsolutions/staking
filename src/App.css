@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+section {
+  background-color: #000019;
+}
+* {
+  font-family: revert;
+}
+/* NAVBAR */
+
+.btn.button {
+  background: linear-gradient(89.69deg, #ffa133 0.27%, #ad00ff 98.91%);
+  border: none;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 25px;
+  transition: 2s;
+  scroll-behavior: smooth;
+  margin-left: 20px;
+}
+.btn.button:hover {
+  color: #fff;
+  background: linear-gradient(89.69deg, #ffa133 0.27%, #ffa133 91%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* MAIN */
+
+.main-area {
+  padding-top: 70px;
+  margin-left: 60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.heading {
+  font-size: 50px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffa133 5%, #ad00ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* MetaWeb3 */
+
+img.ia {
+  width: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.image-area {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn.max-button {
+  background: linear-gradient(89.69deg, #ffa133 0.27%, #ad00ff 98.91%);
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  transition: 2s;
+  scroll-behavior: smooth;
+  margin-left: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.btn.max-button:hover {
+  color: #fff;
+  background: linear-gradient(89.69deg, #ffa133 0.27%, #ffa133 91%);
+}
+
+.btn.approve-button {
+  border: 1px solid #ffa133;
+  background: #19042b;
+  color: #fff;
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  padding: 15px;
+  transition: 0.6s ease-in-out;
+}
+
+.btn.approve-button:hover {
+  background: linear-gradient(89.69deg, #ffa133 0.27%, #ad00ff 98.91%);
+  transition-delay:5s;
+  color: #ffff;
+}
+
+@media screen and (max-width: 640px) {
+  .main-area {
+    padding-top: 70px;
+    margin-left: 0px;
   }
 }
