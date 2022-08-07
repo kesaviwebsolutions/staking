@@ -1,6 +1,7 @@
 import React from "react";
 import Navlogo from "../images/logo (1).png";
 import meta from "../images/meta.png";
+import connect from "../images/connect.svg";
 import { FaDiscord, FaTelegramPlane, FaTwitter } from "react-icons/fa";
 
 export default function Navbar() {
@@ -11,7 +12,7 @@ export default function Navbar() {
           <nav className="navbar navbar-expand-lg navbar-light bg-transparent pt-3">
             <div className="container-fluid">
               <a className="navbar-brand" href="/">
-                <img src={Navlogo} alt="" className="w-25" />
+                <img src={Navlogo} alt="" className="nav-logo" />
               </a>
               <button
                 className="navbar-toggler"
@@ -21,6 +22,10 @@ export default function Navbar() {
                 aria-controls="navbarNav"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
+                style={{
+                  background:
+                    "linear-gradient(89.69deg, #ffa133 0.27%, #ad00ff 98.91%)",
+                }}
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -41,7 +46,9 @@ export default function Navbar() {
                     <a
                       className="nav-link active text-light mx-2"
                       aria-current="page"
-                      href="/"
+                      href="https://t.me/MetaWeb3Pad"
+                      target="_blank"
+                      rel="noreferrer"
                     >
                       <FaDiscord size={25} />
                     </a>
@@ -50,7 +57,9 @@ export default function Navbar() {
                     <a
                       className="nav-link active text-light mx-2"
                       aria-current="page"
-                      href="/"
+                      href="https://t.me/MetaWeb3Pad"
+                      target="_blank"
+                      rel="noreferrer"
                     >
                       <FaTelegramPlane size={25} />
                     </a>
@@ -59,21 +68,35 @@ export default function Navbar() {
                     <a
                       className="nav-link active text-light mx-2"
                       aria-current="page"
-                      href="/"
+                      href="https://twitter.com/MetaWeb3Pad"
+                      target="_blank"
+                      rel="noreferrer"
                     >
                       <FaTwitter size={25} />
                     </a>
                   </li>
+                  <button
+                    type="button"
+                    className="btn button fw-bold"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop"
+                  >
+                    Connect Wallet
+                  </button>
+                  {/* <div className="dropdown">
+                    <button
+                      className="btn button fw-bold dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      0xdC2...b122
+                    </button>
+                    <ul className="dropdown-menu">
+                      <li>Disconnect</li>
+                    </ul>
+                  </div> */}
                 </ul>
-
-                <button
-                  type="button"
-                  className="btn button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
-                >
-                  Connect Wallet
-                </button>
 
                 <div
                   className="modal fade"
@@ -85,10 +108,16 @@ export default function Navbar() {
                   aria-hidden="true"
                 >
                   <div className="modal-dialog modal-dialog-centered">
-                    <div className="modal-content">
+                    <div
+                      className="modal-content"
+                      style={{
+                        background:
+                          "linear-gradient(89.69deg, #ffa133 0.27%, #ad00ff 98.91%)",
+                      }}
+                    >
                       <div className="modal-header">
                         <h5
-                          className="modal-title ms-auto"
+                          className="modal-title ms-auto text-light fs-3 fw-bold"
                           id="staticBackdropLabel"
                         >
                           Please connect your wallet
@@ -101,9 +130,15 @@ export default function Navbar() {
                         ></button>
                       </div>
                       <div className="modal-body">
-                        <div className="metaimg">
+                        <div className="metaimg d-flex mt-3 mb-3">
                           <img
                             src={meta}
+                            alt=""
+                            className="w-25 d-block m-auto"
+                            style={{ cursor: "pointer" }}
+                          />
+                          <img
+                            src={connect}
                             alt=""
                             className="w-25 d-block m-auto"
                             style={{ cursor: "pointer" }}
