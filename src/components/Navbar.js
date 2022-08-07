@@ -1,10 +1,38 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import Navlogo from "../images/logo (1).png";
 import meta from "../images/meta.png";
 import connect from "../images/connect.svg";
-import { FaDiscord, FaTelegramPlane, FaTwitter } from "react-icons/fa";
+import { FaAddressCard, FaDiscord, FaTelegramPlane, FaTwitter } from "react-icons/fa";
+import { WalletConnect, MetaMasklogin, getUserAddress } from './../Web3/SelectWallet'
 
 export default function Navbar() {
+
+  const [user, setUser] = useState()
+
+  useEffect(()=>{
+
+  },[])
+
+  const Metamask = async() => {
+    await MetaMasklogin();
+    const user = await getUserAddress();
+    window.user = user
+    setUser(user)
+  }
+
+  const WalletConnectlogin = async() => {
+    await WalletConnect();
+    const user = await getUserAddress();
+    window.user = user
+    setUser(user)
+  }
+
+  const slice = (address)=>{
+    const first = address.slice(0,5)
+    const second = address.slice(37, 42)
+    return first + "...." + second
+  }
+
   return (
     <div>
       <section>
@@ -81,7 +109,7 @@ export default function Navbar() {
                     data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop"
                   >
-                    Connect Wallet
+                    {user ? slice(user) : "Connect Wallet"}
                   </button>
                   {/* <div className="dropdown">
                     <button
@@ -134,12 +162,14 @@ export default function Navbar() {
                           <img
                             src={meta}
                             alt=""
+                            onClick={()=>Metamask()}
                             className="w-25 d-block m-auto"
                             style={{ cursor: "pointer" }}
                           />
                           <img
                             src={connect}
                             alt=""
+                            onClick={()=>WalletConnectlogin()}
                             className="w-25 d-block m-auto"
                             style={{ cursor: "pointer" }}
                           />

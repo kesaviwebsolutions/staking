@@ -1,9 +1,32 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import favicon from "../images/favicon.png";
 import { BsArrowRight } from "react-icons/bs";
 import Footer from "./Footer";
+import { tokenBalance } from "../Web3/SelectWallet";
 
 export default function MetaWeb3() {
+
+  const [BalanceOftoken, setBalanceOftoken] = useState(0)
+
+  useEffect(()=>{
+    const init = async()=>{
+      const balance = await tokenBalance();
+      setBalanceOftoken(balance)
+      console.log(balance)
+    }
+
+    // setInterval(async()=>{
+       await init();
+    //   console.log(window.user)
+    // },5000);
+    
+  },[])
+
+  const init = async()=>{
+    const balance = await tokenBalance();
+    setBalanceOftoken(balance)
+  }
+
   return (
     <div>
       <div className="container">
@@ -50,7 +73,7 @@ export default function MetaWeb3() {
                 000..0000
               </a>
             </p>
-            <p className="card-text mt-2">Your Balance: NaN</p>
+            <p className="card-text mt-2">Your Balance: {BalanceOftoken}</p>
             <p className="card-text mt-2">Staked Amount: NaN</p>
             <hr />
             <div className="content">
