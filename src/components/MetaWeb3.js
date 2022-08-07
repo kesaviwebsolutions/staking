@@ -8,19 +8,19 @@ export default function MetaWeb3() {
 
   const [BalanceOftoken, setBalanceOftoken] = useState(0)
 
-  useEffect(()=>{
-    const init = async()=>{
-      const balance = await tokenBalance();
-      setBalanceOftoken(balance)
-      console.log(balance)
-    }
+  // useEffect(()=>{
+  //   const init = async()=>{
+  //     const balance = await tokenBalance();
+  //     setBalanceOftoken(balance)
+  //     console.log(balance)
+  //   }
 
-    // setInterval(async()=>{
-       await init();
-    //   console.log(window.user)
-    // },5000);
+  //   // setInterval(async()=>{
+  //      await init();
+  //   //   console.log(window.user)
+  //   // },5000);
     
-  },[])
+  // },[])
 
   const init = async()=>{
     const balance = await tokenBalance();
@@ -32,7 +32,7 @@ export default function MetaWeb3() {
       <div className="container">
         <div className="card staking-card">
           <div className="card-body">
-            <h5 className="card-title">MetaWeb3 Stacking</h5>
+            <h5 className="card-title text-center fs-4 fw-bolder">MetaWeb3 Stacking</h5>
             <div className="image-area">
               <div>
                 <span
@@ -80,15 +80,15 @@ export default function MetaWeb3() {
               <p>Status</p>
               <p>Collecting</p>
             </div>
-            <div className="content">
+            <div className="content mt-3">
               <p>Withdrawl Fee</p>
               <p>5%</p>
             </div>
-            <div className="content">
+            <div className="content mt-3">
               <p>Withdrawl Lockup</p>
               <p>12 Hour(s)</p>
             </div>
-            <form className="d-flex">
+            <form className="d-flex mt-3">
               <input
                 className="form-control me-2"
                 type="number"

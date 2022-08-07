@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="footer mt-5 mb-3">
                 <img src={footerLogo} alt="" className="footerimg" />
               </div>
-              <span className="text-light fw-light">Thanks for your time!</span>
+              {/* <span className="text-light fw-light">Thanks for your time!</span> */}
               <div className="footer-link">
                 <ul className="footer-nav-items">
                   <li className="nav-item">
@@ -20,7 +20,7 @@ export default function Footer() {
                       href="https://metaweb3pad.io/index.html#about-us"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-light fw-light mx-2"
+                      className="text-light fw-light mx-2 navLink"
                     >
                       About
                     </a>
@@ -30,7 +30,7 @@ export default function Footer() {
                       href="https://metaweb3pad.io/index.html#nft"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-light fw-light mx-2"
+                      className="text-light fw-light mx-2 navLink"
                     >
                       NFT Collection
                     </a>
@@ -40,7 +40,7 @@ export default function Footer() {
                       href="https://metaweb3pad.io/index.html#key-points"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-light fw-light mx-2"
+                      className="text-light fw-light mx-2 navLink"
                     >
                       Key Points
                     </a>
@@ -50,7 +50,7 @@ export default function Footer() {
                       href="https://metaweb3pad.io/index.html#roadmap"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-light fw-light mx-2"
+                      className="text-light fw-light mx-2 navLink"
                     >
                       Roadmap
                     </a>
@@ -60,7 +60,7 @@ export default function Footer() {
                       href="https://metaweb3pad.io/index.html#faq"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-light fw-light mx-2"
+                      className="text-light fw-light mx-2 navLink"
                     >
                       FAQ
                     </a>
@@ -70,7 +70,7 @@ export default function Footer() {
                       href="https://github.com/cyberscope-io/audits/blob/main/metaweb3pad/audit.pdf"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-light fw-light mx-2"
+                      className="text-light fw-light mx-2 navLink"
                     >
                       Audit
                     </a>
@@ -80,7 +80,7 @@ export default function Footer() {
                       href="https://github.com/cyberscope-io/kyc/blob/main/metaweb3pad/kyc.png"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-light fw-light mx-2"
+                      className="text-light fw-light mx-2 navLink"
                     >
                       KYC
                     </a>
@@ -90,17 +90,12 @@ export default function Footer() {
                       href="https://github.com/kesaviwebsolutions/Safu-report/blob/main/MetaWeb3Pad%20SAFU%20REPORT.pdf"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-light fw-light mx-2"
+                      className="text-light fw-light mx-2 navLink"
                     >
                       SAFU
                     </a>
                   </li>
                 </ul>
-              </div>
-              <div className="copy-right">
-                <p className="text-light py-5">
-                  2022 © metaweb3pad. All Rights Reserved.
-                </p>
               </div>
             </div>
             <div className="col-lg-5">
@@ -142,6 +137,11 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
+          </div>
+          <div className="copy-right">
+            <p className="text-light pt-5 pb-3 text-center">
+              2022 © metaweb3pad. All Rights Reserved.
+            </p>
           </div>
         </div>
       </section>

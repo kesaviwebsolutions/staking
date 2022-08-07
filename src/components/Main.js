@@ -9,7 +9,7 @@ export default function Main() {
           <div className="main-area">
             <h1 className="heading">MetaWeb3Pad</h1>
             <span className="text-light">
-              StakeMetaWeb3Pad & Liquidity Pool (LP) to earn
+              Stake MetaWeb3Pad to earn
             </span>
           </div>
         </div>
