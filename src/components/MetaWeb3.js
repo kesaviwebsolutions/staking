@@ -32,7 +32,7 @@ export default function MetaWeb3() {
         <div className="card staking-card">
           <div className="card-body">
             <h5 className="card-title text-center fs-4 fw-bolder">
-              MetaWeb3 Stacking
+              MetaWeb3 Staking
             </h5>
 
             {/* <h5 className="card-title">MetaWeb3 Staking</h5> */}
