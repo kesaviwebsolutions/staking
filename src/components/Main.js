@@ -1,7 +1,7 @@
 import React from "react";
 import InfoCards from "./InfoCards";
 
-export default function Main() {
+export default function Main({account ,user}) {
   return (
     <div>
       <section>
@@ -13,7 +13,7 @@ export default function Main() {
             </span>
           </div>
         </div>
-        <InfoCards />
+        <InfoCards account={account} user={user}/>
       </section>
     </div>
   );

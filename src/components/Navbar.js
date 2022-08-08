@@ -3,29 +3,9 @@ import Navlogo from "../images/logo (1).png";
 import meta from "../images/meta.png";
 import connect from "../images/connect.svg";
 import { FaAddressCard, FaDiscord, FaTelegramPlane, FaTwitter } from "react-icons/fa";
-import { WalletConnect, MetaMasklogin, getUserAddress } from './../Web3/SelectWallet'
+import { WalletConnect, MetaMasklogin, getUserAddress, claimToken} from './../Web3/SelectWallet'
 
-export default function Navbar() {
-
-  const [user, setUser] = useState()
-
-  useEffect(()=>{
-
-  },[])
-
-  const Metamask = async() => {
-    await MetaMasklogin();
-    const user = await getUserAddress();
-    window.user = user
-    setUser(user)
-  }
-
-  const WalletConnectlogin = async() => {
-    await WalletConnect();
-    const user = await getUserAddress();
-    window.user = user
-    setUser(user)
-  }
+export default function Navbar({user,WalletConnectlogin,Metamask}) {
 
   const slice = (address)=>{
     const first = address.slice(0,5)
@@ -110,6 +90,16 @@ export default function Navbar() {
                     data-bs-target="#staticBackdrop"
                   >
                     {user ? slice(user) : "Connect Wallet"}
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn button fw-bold"
+                    
+                    data-bs-target="#staticBackdrop"
+                    onClick={()=>claimToken()}
+                  >
+                   Claim Test Token
                   </button>
                   {/* <div className="dropdown">
                     <button
