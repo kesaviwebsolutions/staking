@@ -32,7 +32,11 @@ export default function MetaWeb3() {
       <div className="container">
         <div className="card staking-card">
           <div className="card-body">
+<<<<<<< Updated upstream
             <h5 className="card-title text-center fs-4 fw-bolder">MetaWeb3 Stacking</h5>
+=======
+            <h5 className="card-title">MetaWeb3 Staking</h5>
+>>>>>>> Stashed changes
             <div className="image-area">
               <div>
                 <span
