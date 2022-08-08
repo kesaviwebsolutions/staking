@@ -9,7 +9,7 @@ export default function Main({account ,user}) {
           <div className="main-area">
             <h1 className="heading">MetaWeb3Pad</h1>
             <span className="text-light">
-              Stake MetaWeb3Pad to earn
+              Stake MetaWeb3Pad to earn upto 684% APY
             </span>
           </div>
         </div>
