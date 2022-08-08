@@ -1,12 +1,11 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import favicon from "../images/favicon.png";
 import { BsArrowRight } from "react-icons/bs";
 import Footer from "./Footer";
 import { tokenBalance } from "../Web3/SelectWallet";
 
 export default function MetaWeb3() {
-
-  const [BalanceOftoken, setBalanceOftoken] = useState(0)
+  const [BalanceOftoken, setBalanceOftoken] = useState(0);
 
   // useEffect(()=>{
   //   const init = async()=>{
@@ -19,24 +18,25 @@ export default function MetaWeb3() {
   //      await init();
   //   //   console.log(window.user)
   //   // },5000);
-    
+
   // },[])
 
-  const init = async()=>{
+  const init = async () => {
     const balance = await tokenBalance();
-    setBalanceOftoken(balance)
-  }
+    setBalanceOftoken(balance);
+  };
 
   return (
     <div>
       <div className="container">
         <div className="card staking-card">
           <div className="card-body">
-<<<<<<< Updated upstream
-            <h5 className="card-title text-center fs-4 fw-bolder">MetaWeb3 Stacking</h5>
-=======
-            <h5 className="card-title">MetaWeb3 Staking</h5>
->>>>>>> Stashed changes
+            <h5 className="card-title text-center fs-4 fw-bolder">
+              MetaWeb3 Stacking
+            </h5>
+
+            {/* <h5 className="card-title">MetaWeb3 Staking</h5> */}
+
             <div className="image-area">
               <div>
                 <span
@@ -50,7 +50,10 @@ export default function MetaWeb3() {
                 </span>
                 <img src={favicon} alt="" className="ia" />
               </div>
-              <BsArrowRight size={50} style={{marginTop:"20px", fontWeight:"bold"}}/>
+              <BsArrowRight
+                size={50}
+                style={{ marginTop: "20px", fontWeight: "bold" }}
+              />
               <div>
                 <span
                   style={{
