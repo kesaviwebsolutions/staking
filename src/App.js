@@ -4,7 +4,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
-import { getUserAddress, MetaMasklogin, WalletConnect, GetChainId } from "./Web3/SelectWallet";
+import { getUserAddress, MetaMasklogin, WalletConnect, GetChainId, DissconnectWallet } from "./Web3/SelectWallet";
 
 function App() {
   const [account, setAccount] = useState('')
@@ -12,8 +12,13 @@ function App() {
 
   useEffect(()=>{
     const init = async() =>{
+      const wallet = window.localStorage.getItem("wallet");
+      if(wallet){
+        await Metamask();
+      }
       const id = await GetChainId();
-      if(id != 5){
+      console.log(id)
+      if(Number(id) != 5){
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
           params: [{ chainId: '0x5' }], // chainId must be in hexadecimal numbers
@@ -47,6 +52,7 @@ function App() {
     const user = await getUserAddress();
     window.user = user
     setUser(user)
+    window.localStorage.setItem("wallet","metamask");
   }
 
   const WalletConnectlogin = async() => {
@@ -56,12 +62,22 @@ function App() {
     setUser(user)
   }
 
+  const Dissconnect = async()=>{
+    if(!user){
+      return true;
+    }
+    await DissconnectWallet();
+    setUser(undefined)
+    window.user = undefined
+    window.localStorage.removeItem("wallet")
+  }
+
 
 
   return (
     <div className="App">
       <Router>
-        <Navbar user={user} WalletConnectlogin={WalletConnectlogin} Metamask={Metamask}/>
+        <Navbar user={user} WalletConnectlogin={WalletConnectlogin} Metamask={Metamask} Dissconnect={Dissconnect}/>
         <Main account={account} user={user}/>
       </Router>
     </div>

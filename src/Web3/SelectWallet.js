@@ -25,6 +25,11 @@ export const WalletConnect = async () => {
     }
   };
 
+export const DissconnectWallet = async () =>{
+    await provider.disconnect();
+    web3 = null;
+}
+
 export const MetaMasklogin = async () => {
     // await provider.disconnect();
     const data = await window.ethereum.enable();
@@ -60,7 +65,6 @@ export const towie = async (amount) => {
   };
   
 export const GetChainId = async () => {
-    // const web3 = getWeb();
     const id = await web3.eth.getChainId();
     return id;
   };
@@ -86,6 +90,12 @@ export const tokenBalance = async() => {
 export const stakAmount = async() => {
   const contract = new web3.eth.Contract(ABI,sAddress);
   const data = await contract.methods.stakingBalance(await getUserAddress()).call();
+  return data/10**18;
+}
+
+export const CustomStakAmount = async() => {
+  const contract = new web3.eth.Contract(ABI,sAddress);
+  const data = await contract.methods.customStakingBalance(await getUserAddress()).call();
   return data/10**18;
 }
 
@@ -135,7 +145,7 @@ export const Stakecustom = async(amount) => {
 
 export const customUnstake = async() => {
   const contract = new web3.eth.Contract(ABI,sAddress);
-  const data = await contract.methods.unstakeTokens().send({from: await getUserAddress()})
+  const data = await contract.methods.customUnstake().send({from: await getUserAddress()})
   return data;
 }
 

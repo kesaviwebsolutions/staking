@@ -3,7 +3,7 @@ import favicon from "../images/favicon.png";
 import { BsArrowRight } from "react-icons/bs";
 import Footer from "./Footer";
 import toast, { Toaster } from 'react-hot-toast';
-import { tokenBalance, custonStakAmount,getOwner,CustomDistribution,NormalDistribution, stakAmount, tokenAdd, defaultAPYs, customAPYs, Stake, unStake,customUnstake,Stakecustom,CustomWhitelisting, Allownce, ApproveStaking, pendingReward, pendingCustomReward, getUserAddress } from "../Web3/SelectWallet";
+import { tokenBalance, custonStakAmount,getOwner,CustomDistribution,NormalDistribution, stakAmount, CustomStakAmount, tokenAdd, defaultAPYs, customAPYs, Stake, unStake,customUnstake,Stakecustom,CustomWhitelisting, Allownce, ApproveStaking, pendingReward, pendingCustomReward, getUserAddress } from "../Web3/SelectWallet";
 
 
 const notify = (msg) => toast.success(msg)
@@ -21,6 +21,7 @@ export default function MetaWeb3({account,user}) {
   const [csAPY, setCsAPY] = useState(0)
   const [whitelist, setWhiteListing] = useState(false)
   const [owner, setOwner] = useState('')
+  const [customAmount, setCustomAmount] = useState(0)
  
 
   useEffect(()=>{
@@ -49,6 +50,8 @@ export default function MetaWeb3({account,user}) {
       setWhiteListing(wtl)
       const own = await getOwner()
       setOwner(own)
+      const customamout = await CustomStakAmount()
+      setCustomAmount(customamout)
       
     }
    
@@ -129,12 +132,14 @@ export default function MetaWeb3({account,user}) {
     const data = unStake();
     if(data.status){
       notify("Success")
+      await init();
     }
   }
 
   const CustomRemoveStake = async()=>{
     const data = customUnstake();
     if(data.status){
+      await init();
       notify("Success")
     }
   }
@@ -182,7 +187,7 @@ export default function MetaWeb3({account,user}) {
               </div>
             </div>
             <p className="card-text">
-              Token Address : {token ? slice(token) : ''}
+              Token Address : 
               <a
                 href="/"
                 style={{
@@ -191,7 +196,7 @@ export default function MetaWeb3({account,user}) {
                   color: "#ad00ff",
                 }}
               >
-                {}
+                 {token ? slice(token) : ''}
               </a>
             </p>
             <p className="card-text mt-2">Your Balance: {BalanceOftoken}</p>
@@ -282,7 +287,7 @@ export default function MetaWeb3({account,user}) {
               </div>
             </div>
             <p className="card-text">
-              Token Address : {token ? slice(token) : ''}
+              Token Address : 
               <a
                 href="/"
                 style={{
@@ -291,7 +296,7 @@ export default function MetaWeb3({account,user}) {
                   color: "#ad00ff",
                 }}
               >
-                {}
+                {token ? slice(token) : ''}
               </a>
             </p>
             <p className="card-text mt-2">Your Balance: {BalanceOftoken}</p>
@@ -326,7 +331,7 @@ export default function MetaWeb3({account,user}) {
               {isApprove ? (whitelist ? "Stake" : 'Not WhiteListed') : "Approve Contract"}
             </button>
 
-            {staking > 0 ? <button className="btn approve-button" onClick={()=>CustomRemoveStake()} type="button">
+            {customAmount > 0 ? <button className="btn approve-button" onClick={()=>CustomRemoveStake()} type="button">
               {"Unstake"}
             </button>: ''}
             {user == owner ? <button className="btn approve-button" onClick={()=>CustomDistribution()} type="button">

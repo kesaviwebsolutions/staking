@@ -31,6 +31,7 @@ img.nav-logo {
   font-weight: 500;
   cursor: pointer;
   margin-top: var(--bs-dropdown-spacer);
+  border-radius: 25px;
 }
 
 /* MAIN */

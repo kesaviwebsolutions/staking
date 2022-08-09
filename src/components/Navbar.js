@@ -5,7 +5,7 @@ import connect from "../images/connect.svg";
 import { FaAddressCard, FaDiscord, FaTelegramPlane, FaTwitter } from "react-icons/fa";
 import { WalletConnect, MetaMasklogin, getUserAddress, claimToken} from './../Web3/SelectWallet'
 
-export default function Navbar({user,WalletConnectlogin,Metamask}) {
+export default function Navbar({user,WalletConnectlogin,Metamask,Dissconnect}) {
 
   const slice = (address)=>{
     const first = address.slice(0,5)
@@ -83,14 +83,29 @@ export default function Navbar({user,WalletConnectlogin,Metamask}) {
                       <FaTwitter size={25} />
                     </a>
                   </li>
-                  <button
+                 {!user ? <button
                     type="button"
                     className="btn button fw-bold"
-                    data-bs-toggle="modal"
+                    data-bs-toggle={"modal"}
                     data-bs-target="#staticBackdrop"
+                    
                   >
-                    {user ? slice(user) : "Connect Wallet"}
+                    {"Connect Wallet"}
                   </button>
+                  :
+                  <div className="dropdown">
+                    <button
+                      className="btn button fw-bold dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      {slice(user)}
+                    </button>
+                    <ul className="dropdown-menu" onClick={()=>Dissconnect()}>
+                      <li>Disconnect</li>
+                    </ul>
+                  </div>}
 
                   <button
                     type="button"
@@ -101,19 +116,6 @@ export default function Navbar({user,WalletConnectlogin,Metamask}) {
                   >
                    Claim Test Token
                   </button>
-                  {/* <div className="dropdown">
-                    <button
-                      className="btn button fw-bold dropdown-toggle"
-                      type="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      0xdC2...b122
-                    </button>
-                    <ul className="dropdown-menu">
-                      <li>Disconnect</li>
-                    </ul>
-                  </div> */}
                 </ul>
 
                 <div
