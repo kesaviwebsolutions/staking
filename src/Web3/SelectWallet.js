@@ -2,8 +2,8 @@ import Web3 from "web3/dist/web3.min.js"
 import WalletConnectProvider from "@walletconnect/web3-provider/dist/umd/index.min.js"
 import { token, ABI } from "./ABI";
 
-const sAddress = "0x84C2fDd62c4413D2c3B4ad2A07F998bE87f1125d"
-const tokenAddress = "0xC801a04cf093Da9b6670feaCECCAC7235A3Ec8B9"
+const sAddress = "0xe1d5DC7f5a3a53feFAd17316F31927dec04c5101"
+const tokenAddress = "0x8dA78645d4cC8CCd2c329fFF23D4cb6692879094"
 
 let  web3;
 var provider = new WalletConnectProvider({
@@ -88,9 +88,9 @@ export const tokenBalance = async() => {
 }
 
 export const stakAmount = async() => {
-  const contract = new web3.eth.Contract(ABI,sAddress);
-  const data = await contract.methods.stakingBalance(await getUserAddress()).call();
-  return data/10**18;
+  // const contract = new web3.eth.Contract(ABI,sAddress);
+  // const data = await contract.methods.stakingBalance(await getUserAddress()).call();
+  // return data/10**18;
 }
 
 export const CustomStakAmount = async() => {
@@ -112,9 +112,9 @@ export const tokenAdd = async() => {
 }
 
 export const defaultAPYs = async() => {
-  const contract = new web3.eth.Contract(ABI,sAddress);
-  const data = await contract.methods.defaultAPY().call();
-  return data;
+  // const contract = new web3.eth.Contract(ABI,sAddress);
+  // const data = await contract.methods.defaultAPY().call();
+  // return data;
 }
 
 export const customAPYs = async() => {
@@ -150,9 +150,9 @@ export const customUnstake = async() => {
 }
 
 export const pendingReward = async() => {
-  const contract = new web3.eth.Contract(ABI,sAddress);
-  const data = await contract.methods.pendingNormalRewards(await getUserAddress()).call();
-  return data/10**18;
+  // const contract = new web3.eth.Contract(ABI,sAddress);
+  // const data = await contract.methods.pendingNormalRewards(await getUserAddress()).call();
+  // return data/10**18;
 }
 
 export const pendingCustomReward = async() => {
@@ -180,9 +180,9 @@ export const ContractBalance = async() => {
 }
 
 export const CustomWhitelisting = async() => {
-  const contract = new web3.eth.Contract(ABI, sAddress);
-  const data = await contract.methods.whitelistedForCustomAPY(await getUserAddress()).call();
-  return data;
+  // const contract = new web3.eth.Contract(ABI, sAddress);
+  // const data = await contract.methods.whitelistedForCustomAPY(await getUserAddress()).call();
+  // return data;
 }
 
 export const getOwner = async() => {

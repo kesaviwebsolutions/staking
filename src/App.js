@@ -18,7 +18,7 @@ function App() {
       }
       const id = await GetChainId();
       console.log(id)
-      if(Number(id) != 5){
+      if(Number(id) != 56){
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
           params: [{ chainId: '0x5' }], // chainId must be in hexadecimal numbers

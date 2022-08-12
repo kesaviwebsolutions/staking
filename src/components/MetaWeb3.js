@@ -106,9 +106,7 @@ export default function MetaWeb3({account,user}) {
   }
 
   const CustomStakeToken = async()=>{
-    if(!whitelist){
-      return true
-    }
+ 
     const allow = await Allownce();
     if(Number(allow) > 0 ){
       const data = await Stakecustom(amount);
@@ -251,7 +249,7 @@ export default function MetaWeb3({account,user}) {
         <div className="card staking-card">
           <div className="card-body">
             <h5 className="card-title text-center fs-4 fw-bolder">
-             Boosted Staking
+             High Yield Staking
             </h5>
 
             {/* <h5 className="card-title">MetaWeb3 Staking</h5> */}
@@ -287,17 +285,15 @@ export default function MetaWeb3({account,user}) {
               </div>
             </div>
             <p className="card-text">
-              Token Address : 
-              <a
-                href="/"
+              Token Address :<a
+                href="https://bscscan.com/address/0x8dA78645d4cC8CCd2c329fFF23D4cb6692879094"
+                target='_blank'
                 style={{
                   textDecoration: "none",
                   marginTop: "10px",
                   color: "#ad00ff",
                 }}
-              >
-                {token ? slice(token) : ''}
-              </a>
+              > {token ? slice(token): ''}</a>
             </p>
             <p className="card-text mt-2">Your Balance: {BalanceOftoken}</p>
             <p className="card-text mt-2">Staked Amount: {custonStaking}</p>
@@ -328,7 +324,7 @@ export default function MetaWeb3({account,user}) {
               </button>
             </form>
             <button className="btn approve-button" onClick={()=>CustomStakeToken()} type="button">
-              {isApprove ? (whitelist ? "Stake" : 'Not WhiteListed') : "Approve Contract"}
+              {isApprove ? "Stake" : "Approve Contract"}
             </button>
 
             {customAmount > 0 ? <button className="btn approve-button" onClick={()=>CustomRemoveStake()} type="button">
@@ -338,7 +334,7 @@ export default function MetaWeb3({account,user}) {
               {"Distribute"}
             </button>: ''}
             <div className="text-center">
-              <p>{customReward}</p>
+              <p>{customReward} Earned Rewards</p>
             </div>
           </div>
         </div>
