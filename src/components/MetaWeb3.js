@@ -148,13 +148,13 @@ export default function MetaWeb3({account,user}) {
     <div>
       <div className="container">
       <div className="d-flex" style={{flexWrap:'wrap'}}>
-        <div className="card staking-card">
+        {/* <div className="card staking-card">
           <div className="card-body">
             <h5 className="card-title text-center fs-4 fw-bolder">
               Normal Staking
             </h5>
 
-            {/* <h5 className="card-title">MetaWeb3 Staking</h5> */}
+           
 
             <div className="image-area">
               <div>
@@ -213,7 +213,7 @@ export default function MetaWeb3({account,user}) {
             {/* <div className="content mt-3">
               <p>Withdrawl Lockup</p>
               <p>12 Hour(s)</p>
-            </div> */}
+            </div> 
             <form className="d-flex mt-3">
               <input
                 className="form-control me-2"
@@ -241,7 +241,7 @@ export default function MetaWeb3({account,user}) {
               <p>{nomalReward}</p>
             </div>
           </div>
-        </div>
+        </div> */}
          
          
          {/* ..................................Custom Staking................................  */}
@@ -308,7 +308,7 @@ export default function MetaWeb3({account,user}) {
             </div>
             <div className="content mt-3">
               <p>Staking Fee</p>
-              <p>5%</p>
+              <p>0</p>
             </div>
             {/* <div className="content mt-3">
               <p>Withdrawl Lockup</p>
