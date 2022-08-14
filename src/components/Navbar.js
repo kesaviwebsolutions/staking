@@ -106,7 +106,7 @@ export default function Navbar({user,WalletConnectlogin,Metamask,Dissconnect}) {
                       <li>Disconnect</li>
                     </ul>
                   </div>}
-
+{/* 
                   <button
                     type="button"
                     className="btn button fw-bold"
@@ -115,7 +115,7 @@ export default function Navbar({user,WalletConnectlogin,Metamask,Dissconnect}) {
                     onClick={()=>claimToken()}
                   >
                    Claim Test Token
-                  </button>
+                  </button> */}
                 </ul>
 
                 <div
