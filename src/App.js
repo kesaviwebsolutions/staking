@@ -21,7 +21,7 @@ function App() {
       if(Number(id) != 56){
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: '0x5' }], // chainId must be in hexadecimal numbers
+          params: [{ chainId: '0x38' }], // chainId must be in hexadecimal numbers
         });
       }
     }
